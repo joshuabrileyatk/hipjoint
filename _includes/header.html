@@ -1,0 +1,17 @@
+<header class="bg-white text-zinc-700">
+  <div class="mx-auto max-w-7xl flex items-stretch justify-between h-16 lg:h-20 px-4">
+    <div class="flex items-center">
+      <a href="/" class="block w-24 lg:w-40 " aria-label="return to home page">
+        {% include logo.html %}
+      </a>
+    </div>
+
+    <nav aria-label="Main site nav" class="flex items-stretch gap-2 lg:gap-4 font-semibold">
+      {% for item in site.data.navigation %}
+        <a href="{{ item.link }}" class="flex items-center hover:text-orange-500 {% if page.url == item.link %}text-orange-500{% endif %}">
+          {{ item.name }}
+        </a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>
